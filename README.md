@@ -1,5 +1,5 @@
 # cc-ransac-reconstruction-step
-Python tools to extract RANSAC primitives from CloudCompare and reconstruct them as aligned STEP geometry for reverse engineering.
+Python tools to extract primitives from CloudCompare's *RANSAC shape-detection* and reconstruct them as aligned STEP geometry for reverse engineering.
 # CloudCompare RANSAC to STEP Reconstruction
 
 ![Reconstruction preview](screenshot.jpg)
