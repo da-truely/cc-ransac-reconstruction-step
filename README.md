@@ -2,7 +2,7 @@
 Python tools to extract primitives from CloudCompare's *RANSAC shape-detection* and reconstruct them as aligned STEP geometry for reverse engineering.
 # CloudCompare RANSAC to STEP Reconstruction
 
-![Reconstruction preview](screenshot.jpg)
+![Reconstruction preview](screenshot.jpg "Reconstruction example (red = scan)")
 
 This project turns CloudCompare RANSAC primitives into editable STEP geometry.  
 It is intended as a compact reverse-engineering pipeline for point clouds: reconstruct the detected shapes in CloudCompare, export them as JSON, then rebuild them as separate STEP solids or faces while preserving placement and orientation.
@@ -15,7 +15,7 @@ The workflow is split into two scripts:
   Runs inside CloudCompare’s Python plugin. It walks the selected entity tree recursively, finds supported reconstructed shapes, reads their parameters and transformation history, and writes one JSON export.
 
 - `json_to_step.py`  
-  Runs from the command line. It reads the exported JSON and rebuilds each shape as a separate STEP entity so that parts can later be hidden or inspected individually in downstream CAD software.
+  Runs from the command line. It reads the exported JSON and rebuilds each shape as a separate, parametric STEP entity so that parts can later be hidden or inspected individually in downstream CAD software.
 
 The current pipeline keeps the object orientation and placement from CloudCompare. For planar primitives, the script builds a rectangular face instead of a mathematical infinite plane, because STEP export must be finite.
 
